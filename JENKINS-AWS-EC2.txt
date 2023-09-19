@@ -1,0 +1,51 @@
+1)launch red-hat linux ec2 insttance
+
+2)sudo su -
+
+3) install java ans set path
+    yum install java-1.8*
+4) java -version
+
+5) ls -la
+6) vi .bash_profile
+
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk.1.8.0.161.b14.e17_4.x86_64
+PATH=$PATH:$JAVA_HOME:$HOME/bin
+
+7) echo $PATH
+
+8) yum install wget -y
+
+
+9) Download Jenkins from the Red Hat Repository
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+10)Import the verification key using the package manager RPM
+rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+11)Install Jenkins with yum command:
+__________________________________
+yum install jenkins -y
+
+12) check jenkins status:
+__________________________
+
+service jenkins status
+12)Start Jenkins Service:
+___________________________
+service jenkins start
+13) copy and paste the path of public dns with  port 8080 and  clik
+http://ec2-18-130-185-5.eu-west-2.compute.amazonaws.com:8080
+if not work out
+14) plz change the inboudn rule for security group of ec2
+ addrule: custom---port 8080--save
+15) refreshte browser..
+16) cancel all the selected plug-ins
+17) clikc on admin
+18) change the passwod
+19)set the java path
+  find / -name javac
+20)configure freestyle project
+21) buildactions--execute shell
+22) execute job
+23)see the job status
+
+
